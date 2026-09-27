@@ -73,8 +73,12 @@ npm run generate-icons
 
 GitHub Actions により `main` ブランチへの push で [GitHub Pages](https://pages.github.com/) へ自動デプロイされます。
 
+**公開URL:** https://rintaras.github.io/portfolio-website/
+
 1. リポジトリの **Settings → Pages → Build and deployment** で **GitHub Actions** を選択
 2. `main` に push すると `.github/workflows/deploy-pages.yml` がビルド・公開を実行
+
+カスタムドメイン（例: `rintaras.tech`）を使う場合は、Pages の設定で CNAME を追加し、`vite.config.ts` の `base` を `'/'` にしたうえで別ホスト（Vercel 等）へデプロイする構成も可能です。
 
 ローカルでビルドのみ確認する場合:
 

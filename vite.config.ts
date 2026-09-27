@@ -2,8 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
+const base = process.env.GITHUB_PAGES === 'true' ? '/portfolio-website/' : '/';
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  base,
   plugins: [
     react(),
     VitePWA({
@@ -18,8 +21,8 @@ export default defineConfig({
         background_color: '#050505',
         display: 'standalone',
         orientation: 'portrait-primary',
-        scope: '/',
-        start_url: '/',
+        scope: base,
+        start_url: base,
         lang: 'ja',
         icons: [
           {
